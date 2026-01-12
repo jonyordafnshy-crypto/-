@@ -152,7 +152,7 @@
             color: var(--accent-color);
         }
 
-        /* Mobile Toggle */
+                /* Mobile Toggle */
         .mobile-toggle { display: none; }
 
         @media (max-width: 768px) {
@@ -169,20 +169,46 @@
             }
             .nav-links.mobile-active { display: flex; }
             
+            /* --- تعديل القائمة الفرعية لتصبح شجرة في الجوال --- */
+            .nav-item.has-dropdown {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start; /* محاذاة لليمين */
+            }
+
             .dropdown-menu {
-                position: static;
+                position: static; /* إلغاء التموضع العائم */
+                display: none; /* إخفاء القائمة الفرعية افتراضياً */
+                width: 100%;
+                padding-right: 20px; /* مسافة بادئة لتظهر كشجرة */
                 box-shadow: none;
-                padding-right: 20px;
                 transform: none;
                 opacity: 1;
                 visibility: visible;
-                display: none;
                 border: none;
-                background: #f8f9fa;
+                background: #f1f2f6; /* لون خلفية مميز للفرع */
+                margin-top: 10px;
+                border-radius: 8px;
+            }
+
+            /* إظهار القائمة عند الضغط (تتم عبر الجافاسكريبت) */
+            .nav-item.show-dropdown .dropdown-menu {
+                display: block;
+                animation: slideDown 0.3s ease;
+            }
+
+            /* تحريك الأيقونة عند الفتح */
+            .nav-item.show-dropdown .dropdown-toggle i.fa-chevron-down {
+                transform: rotate(180deg);
+            }
+
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
             }
 
             .mobile-toggle { display: block; font-size: 1.5rem; cursor: pointer; color: var(--primary-color); }
-        }
+        }}
 
         /* --- Main Content Area (SPA Logic) --- */
         main {
@@ -862,6 +888,18 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+    
+
     <!-- JavaScript Logic -->
     <script>
         // بيانات الخدمات (استخرجت من المحتوى الأصلي لضمان عدم فقدان أي معلومة)
@@ -1025,6 +1063,46 @@
             }
         }
 
+
+        // --- كود جديد لتفعيل القائمة الشجرية في الجوال ---
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                // التحقق إذا كنا في وضع الشاشة الصغيرة (جوال)
+                if (window.innerWidth <= 768) {
+                    // منع الرابط من الانتقال لأعلى الصفحة
+                    e.preventDefault();
+                    
+                    // البحث عن العنصر الأب (li) والتبديل بين إظهار وإخفاء القائمة الفرعية
+                    const parentItem = toggle.parentElement;
+                    
+                    // إغلاق أي قائمة فرعية أخرى مفتوحة (اختياري، لتنظيم العرض)
+                    document.querySelectorAll('.nav-item.show-dropdown').forEach(item => {
+                        if (item !== parentItem) {
+                            item.classList.remove('show-dropdown');
+                        }
+                    });
+
+                    // تبديل الحالة (فتح/إغلاق)
+                    parentItem.classList.toggle('show-dropdown');
+                }
+            });
+        });
+
+        // عند تغيير حجم الشاشة، تأكد من إعادة ضبط الوضع
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.classList.remove('show-dropdown');
+                });
+            }
+        });
+
+
+
+        
+
         // إغلاق المودال عند النقر خارج الصندوق
         window.onclick = function(event) {
             if (event.target.classList.contains('modal-overlay')) {
@@ -1041,4 +1119,5 @@
 
     </script>
 </body>
+
 </html>
