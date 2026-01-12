@@ -17,7 +17,7 @@
     <!-- مكتبة أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
+      <style>
         :root {
             --primary-color: #1a252f; /* كحلي غامق */
             --secondary-color: #2c3e50; /* رصاصي */
@@ -152,61 +152,29 @@
             color: var(--accent-color);
         }
 
-                 @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Hide for mobile initially */
-                flex-direction: column; /* <-- 1. أضف هذا السطر لجعل القائمة عمودية */
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--white);
-                padding: 20px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                align-items: flex-start; /* <-- 2. أضف هذا السطر لتوحيد المحاذاة */
-            }
-            .nav-links.mobile-active { display: flex; }
-            
-            /* --- تعديل القائمة الفرعية لتصبح شجرة في الجوال --- */
-            .nav-item.has-dropdown {
-                width: 100%;
-                flex-direction: column;
-                align-items: flex-start; /* محاذاة لليمين */
-            }
+        .mobile-toggle { display: none; }
 
-            .dropdown-menu {
-                position: static; /* إلغاء التموضع العائم */
-                display: none; /* إخفاء القائمة الفرعية افتراضياً */
-                width: 100%;
-                padding-right: 20px; /* مسافة بادئة لتظهر كشجرة */
-                box-shadow: none;
-                transform: none;
-                opacity: 1;
-                visibility: visible;
-                border: none;
-                background: #f1f2f6; /* لون خلفية مميز للفرع */
-                margin-top: 10px;
-                border-radius: 8px;
-            }
-
-            /* إظهار القائمة عند الضغط (تتم عبر الجافاسكريبت) */
-            .nav-item.show-dropdown .dropdown-menu {
-                display: block;
-                animation: slideDown 0.3s ease;
-            }
-
-            /* تحريك الأيقونة عند الفتح */
-            .nav-item.show-dropdown .dropdown-toggle i.fa-chevron-down {
-                transform: rotate(180deg);
-            }
-
-            @keyframes slideDown {
-                from { opacity: 0; transform: translateY(-10px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-
-            .mobile-toggle { display: block; font-size: 1.5rem; cursor: pointer; color: var(--primary-color); }
+        /* --- Main Content Area (SPA Logic) --- */
+        main {
+            min-height: 80vh;
+            padding: 40px 0;
+            padding-top: 20px; /* إضافة مسافة إضافية من الأعلى */
         }
+
+        .page-section {
+            display: none; /* Hide all pages initially */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .page-section.active-section {
+            display: block; /* Show active page */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* --- Hero Section (Home) --- */
         .hero {
             text-align: center;
@@ -386,8 +354,6 @@
             margin-top: 60px;
             text-align: center;
         }
-        
-        /* تم إزالة تنسيق الزر العائم هنا لعدم وجوده الآن */
 
         /* --- Modals (Popups) --- */
         .modal-overlay {
@@ -524,12 +490,99 @@
         .dev-info h4 { margin-bottom: 5px; color: var(--primary-color); }
         .dev-info p { font-size: 0.9rem; color: #666; }
 
-        /* Responsive */
+        /* --- Responsive Styles (Media Queries) --- */
         @media (max-width: 768px) {
+            /* Navigation Mobile Styles */
+            .nav-links {
+                display: none; /* Hide for mobile initially */
+                flex-direction: column; /* جعل القائمة عمودية */
+                position: absolute;
+                top: 100%; /* مباشرة تحت الهيدر */
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                align-items: flex-start; /* محاذاة لليمين */
+                z-index: 999; /* أعلى من المحتوى */
+            }
+
+            .nav-links.mobile-active { display: flex; }
+            
+            .nav-item {
+                width: 100%;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 15px;
+                border-radius: 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            /* --- Dropdown Mobile Styles (Accordion) --- */
+            .nav-item.has-dropdown {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start; 
+            }
+
+            .dropdown-menu {
+                position: static; /* إلغاء التموضع العائم */
+                display: none; /* إخفاء القائمة الفرعية افتراضياً */
+                width: 100%;
+                padding-right: 20px; /* مسافة بادئة لتظهر كشجرة */
+                box-shadow: none;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                border: none;
+                background: #f1f2f6; /* لون خلفية مميز للفرع */
+                margin-top: 0;
+                border-radius: 0;
+                border-bottom: 1px solid #ddd;
+            }
+
+            /* إظهار القائمة عند الضغط (تتم عبر الجافاسكريبت) */
+            .nav-item.show-dropdown .dropdown-menu {
+                display: block;
+                animation: slideDown 0.3s ease;
+            }
+
+            /* تحريك الأيقونة عند الفتح */
+            .nav-item.show-dropdown .dropdown-toggle i.fa-chevron-down {
+                transform: rotate(180deg);
+            }
+
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .mobile-toggle { 
+                display: block; 
+                font-size: 1.5rem; 
+                cursor: pointer; 
+                color: var(--primary-color); 
+            }
+
+            /* Content Layout Fixes */
             .hero h1 { font-size: 2rem; }
-            .grid-container { grid-template-columns: 1fr; }
+            
+            /* Fix Grid Layout on Mobile */
+            .grid-container { 
+                grid-template-columns: 1fr; /* عمود واحد فقط */
+                padding: 0 10px;
+            }
+
+            /* Article View Fixes */
             .modal-box { width: 95%; }
             .article-view { padding: 20px; }
+            
+            /* Ensure sections don't overlap header */
+            .page-section {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -1098,4 +1151,5 @@
 </body>
 
 </html>
+
 
