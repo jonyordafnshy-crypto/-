@@ -16,7 +16,7 @@
     <!-- مكتبة أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
+      <style>
         :root {
             --primary-color: #1a252f;
             --secondary-color: #2c3e50;
@@ -244,7 +244,7 @@
             margin-top: 60px;
         }
 
-        /* --- Modal Styles --- */
+        /* --- Modal Styles (مطابقة للرئيسية ومحسنة للموبايل) --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -262,7 +262,10 @@
             backdrop-filter: blur(5px);
         }
 
-        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-overlay.active { 
+            opacity: 1; 
+            visibility: visible; 
+        }
 
         .modal-box {
             background: var(--white);
@@ -274,10 +277,15 @@
             transform: scale(0.8);
             transition: var(--transition);
             max-height: 90vh;
-            overflow-y: auto;
+            overflow-y: auto; /* السماح بالتمرير إذا كان المحتوى طويلاً */
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
         }
 
-        .modal-overlay.active .modal-box { transform: scale(1); }
+        .modal-overlay.active .modal-box { 
+            transform: scale(1); 
+        }
 
         .modal-header {
             background: var(--primary-color);
@@ -288,6 +296,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-shrink: 0; /* لمنع الهيدر من الانكماش */
         }
 
         .modal-close {
@@ -299,10 +308,23 @@
             border-radius: 50%;
             cursor: pointer;
             font-size: 1.2rem;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .modal-body { padding: 30px; }
+        .modal-close:hover { 
+            background: rgba(255,255,255,0.4); 
+            transform: rotate(90deg); 
+        }
 
+        .modal-body { 
+            padding: 30px; 
+            overflow-y: auto; /* التمرير يكون داخل البدي فقط */
+        }
+        
+        /* --- تنسيق بطاقة المطور --- */
         .dev-card {
             background: #f1f2f6;
             padding: 20px;
@@ -311,6 +333,7 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .dev-avatar {
@@ -319,16 +342,31 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-shrink: 0; /* منع الصورة من الانضغاط */
         }
 
-        .dev-info h4 { margin-bottom: 5px; color: var(--primary-color); }
-        .dev-info p { font-size: 0.9rem; color: #666; }
+        .dev-info { 
+            flex: 1; /* يشغل المساحة المتبقية */
+        }
+
+        .dev-info h4 { 
+            margin-bottom: 5px; 
+            color: var(--primary-color); 
+            font-size: 1.1rem; 
+        }
+
+        .dev-info p { 
+            font-size: 0.9rem; 
+            color: #666; 
+        }
 
         .dev-actions {
             display: flex;
             gap: 10px;
             margin-top: 10px;
             justify-content: flex-start;
+            flex-wrap: wrap; /* السماح للأزرار بالنزول لسطر جديد */
         }
 
         .d-btn {
@@ -341,6 +379,7 @@
             color: white;
             text-decoration: none;
             transition: 0.2s;
+            flex-shrink: 0;
         }
         .d-btn:hover { transform: scale(1.1); }
         .btn-whatsapp { background: #25D366; }
@@ -348,12 +387,49 @@
         .btn-instagram { background: #e1306c; }
         .btn-site { background: #7289da; }
 
-        /* Responsive */
+        /* --- Responsive Styles --- */
         @media (max-width: 768px) {
             .article-header h1 { font-size: 1.8rem; }
             .article-view { padding: 20px; }
             .grid-container { grid-template-columns: 1fr; }
             .contact-badge { font-size: 1rem; padding: 8px 15px; display: inline-flex; align-items: center; gap: 8px; }
+            
+            /* تعديلات المودال للهواتف الكبيرة والتابلت */
+            .modal-box { width: 95%; }
+        }
+
+        /* --- استجابة خاصة بالمودال للشاشات الصغيرة جداً --- */
+        @media (max-width: 480px) {
+            .modal-box { 
+                width: 95%; 
+                padding: 0;
+            }
+            
+            .modal-body { 
+                padding: 20px; 
+            }
+
+            /* ترتيب البطاقة عمودياً في الموبايل */
+            .dev-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 15px;
+            }
+            
+            .dev-info {
+                width: 100%;
+            }
+
+            .dev-actions {
+                justify-content: center; /* توسيط الأزرار */
+                width: 100%;
+            }
+
+            .dev-avatar {
+                margin-bottom: 10px;
+                width: 90px;
+                height: 90px;
+            }
         }
     </style>
 </head>
@@ -553,4 +629,5 @@
         }
     </script>
 </body>
+
 </html>
