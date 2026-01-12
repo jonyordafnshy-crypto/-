@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقاول تركيب ساندوتش بانل | القاسم</title>
+    
+    <!-- أيقونة الموقع (Favicon) -->
+    <link rel="shortcut icon" href="imgs/icon.jpg" type="image/x-icon">
+    
+    <!-- خطوط جوجل العربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #1a252f;
+            --secondary-color: #2c3e50;
+            --accent-color: #d35400;
+            --light-bg: #f8f9fa;
+            --text-color: #333;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .logo i { color: var(--accent-color); }
+
+        /* --- Main Content --- */
+        main {
+            padding: 60px 0;
+            min-height: 80vh;
+        }
+
+        .article-view {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+        
+        .article-header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .article-header p {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* تنسيق زر الاتصال ليكون تفاعلي ومباشر */
+        .contact-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .contact-badge:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(211, 84, 0, 0.4);
+        }
+
+        .article-content h2, .article-content h3 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            padding-right: 15px;
+            border-right: 5px solid var(--accent-color);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .article-content ul {
+            list-style: disc;
+            padding-right: 40px;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+        }
+        
+        .article-content ul li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .article-content strong { color: var(--primary-color); }
+
+        /* Images in Article */
+        .article-content img {
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            border: 5px solid var(--white);
+        }
+
+        /* Grid for Gallery */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .work-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .work-card:hover { transform: translateY(-5px); }
+        .work-card img { width: 100%; height: 200px; object-fit: cover; margin: 0; border: none; }
+        .work-card-caption { padding: 15px; text-align: center; font-weight: bold; color: var(--primary-color); }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(211, 84, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .btn-call-action {
+            background: #25D366; /* لون واتساب/اتصال */
+            font-size: 1.1rem;
+        }
+        .btn-call-action:hover {
+            background: #1ebe57;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* --- Modal Styles --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 3000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+
+        .modal-box {
+            background: var(--white);
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            transform: scale(0.8);
+            transition: var(--transition);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal-box { transform: scale(1); }
+
+        .modal-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: var(--white);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .modal-body { padding: 30px; }
+
+        .dev-card {
+            background: #f1f2f6;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .dev-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--white);
+        }
+
+        .dev-info h4 { margin-bottom: 5px; color: var(--primary-color); }
+        .dev-info p { font-size: 0.9rem; color: #666; }
+
+        .dev-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: flex-start;
+        }
+
+        .d-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .d-btn:hover { transform: scale(1.1); }
+        .btn-whatsapp { background: #25D366; }
+        .btn-telegram { background: #0088cc; }
+        .btn-instagram { background: #e1306c; }
+        .btn-site { background: #7289da; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .article-view { padding: 20px; }
+            .grid-container { grid-template-columns: 1fr; }
+            .contact-badge { font-size: 1rem; padding: 8px 15px; display: inline-flex; align-items: center; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <!-- تغيير الاسم للقاسم -->
+            <div class="logo" onclick="window.location.href='index.html'">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>القاسم</span>
+            </div>
+            <a href="index.html" class="btn btn-primary">
+                <i class="fa-solid fa-home"></i> الرئيسية
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <article class="article-view">
+            <!-- Article Header -->
+            <div class="article-header">
+                <h1>مقاول تركيب ساندوتش بانل للمباني في الرياض</h1>
+                <p>الحل الهندسي الأمثل للتوريد والتركيب والإشراف</p>
+                <!-- زر الاتصال المباشر (tel:) -->
+                <a href="tel:+966532228615" class="contact-badge btn-call-action">
+                    <i class="fa-solid fa-phone"></i> اتصل بنا: +966 53 222 8615
+                </a>
+            </div>
+
+            <!-- Article Content -->
+            <div class="article-content">
+                
+                <!-- صورة هيدر الصفحة (صورة 20) -->
+                <!-- صورة هيدر مقاول تركيب -->
+                <img src="imgs/20.jpg" alt="مقاول تركيب ساندوتش بانل">
+
+                <h2>من نحن كشركة مقاولات؟</h2>
+                <p>
+                    مقاول تركيب ساندوتش بانل للمباني في الرياض يُمثل الحل الأمثل لمن يسعون إلى إضافة لمسة عصرية وتقنية لهندستهم المعمارية. شركة القاسم تبرز كرائدة في هذا المجال، حيث نقدم خدمات متكاملة تشمل التوريد، التركيب، والصيانة لضمان أعلى معايير الجودة.
+                </p>
+                <p>
+                    نتميز بوجود فريق عمل من المهندسين والفنيين ذوي الخبرة الواسعة في التعامل مع جميع أنواع الساندوتش بانل (بولي يوريثين، صوف صخري، صوف زجاجي) وتطبيقها في المشاريع السكنية والتجارية والصناعية.
+                </p>
+
+                <h3>خدمات مقاول التركيب</h3>
+                <p>نقدم لعملائنا مجموعة شاملة من الخدمات الهندسية:</p>
+                <ul>
+                    <li><strong>توريد المواد:</strong> تأمين أفضل أنواع الساندوتش بانل من مصادر موثوقة بأسعار تنافسية.</li>
+                    <li><strong>التركيب المحترف:</strong> تنفيذ أعمال التركيب بدقة عالية لضمان عزل حراري وصوتي مثالي.</li>
+                    <li><strong>أعمال الحديد:</strong> تنفيذ الهياكل الحديدية (الجمالونات) اللازمة لتثبيت الألواح.</li>
+                    <li><strong>التمديدات:</strong> إشراف وتنفيذ التمديدات الكهربائية والصحية داخل الغرف والوحدات.</li>
+                </ul>
+
+                <h3>لماذا تختار شركة القاسم؟</h3>
+                <p>التميز يكمن في التفاصيل، وهذا ما نحرص عليه في كل مشروع:</p>
+                <ul>
+                    <li>التزام صارم بالمواعيد الزمنية للمشاريع.</li>
+                    <li>أسعار شفافة وبدون تكاليف خفية.</li>
+                    <li>ضمانات حقيقية على المواد والأعمال.</li>
+                    <li>تصاميم هندسية مبتكرة تلبي احتياجات العملاء.</li>
+                </ul>
+
+                <h3>مراحل العمل معنا</h3>
+                <ol>
+                    <li>زيارة الموقع وتحليل المتطلبات.</li>
+                    <li>تقديم التصميم والعرض السعر المبدئي.</li>
+                    <li>اتفاقية التعاقد وبدء التوريد.</li>
+                    <li>مرحلة التركيب والإشراف الهندسي.</li>
+                    <li>تسليم العمل والتأكد من الجودة.</li>
+                </ol>
+
+                <div style="margin-top: 50px;">
+                    <h3>صور من مشاريعنا في الرياض:</h3>
+                    <div class="grid-container">
+                        <div class="work-card">
+                            <!-- صورة مشروع 1 (صورة 21) -->
+                            <!-- صورة تنفيذ هنجر -->
+                            <img src="imgs/21.jpg" alt="تنفيذ هنجر ساندوتش بانل">
+                            <div class="work-card-caption">تنفيذ هنجر</div>
+                        </div>
+                        <div class="work-card">
+                            <!-- صورة مشروع 2 (صورة 22) -->
+                            <!-- صورة تركيب سقف -->
+                            <img src="imgs/22.jpg" alt="تركيب أسقف بانل">
+                            <div class="work-card-caption">تركيب الأسقف</div>
+                        </div>
+                        <div class="work-card">
+                            <!-- صورة مشروع 3 (صورة 23) -->
+                            <!-- صورة غرف جاهزة -->
+                            <img src="imgs/23.jpg" alt="غرف جاهزة للموقع">
+                            <div class="work-card-caption">غرف جاهزة</div>
+                        </div>
+                        <div class="work-card">
+                            <!-- صورة مشروع 4 (صورة 24) -->
+                            <!-- صورة ورشة حداد -->
+                            <img src="imgs/24.jpg" alt="ورشة الحدادة">
+                            <div class="work-card-caption">ورشة الحدادة</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 50px 0;">
+                    <p style="font-size: 1.2rem; margin-bottom: 20px;">هل أنت جاهز لبدء مشروعك؟</p>
+                    <a href="tel:+966532228615" class="btn btn-primary btn-call-action" style="padding: 15px 40px; font-size: 1.2rem;">
+                        <i class="fa-solid fa-phone-volume"></i> احجز استشارتك المجانية الآن
+                    </a>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- تغيير السنة إلى 2026 -->
+            <p>&copy; 2026 شركة القاسم لساندوتش بانل. جميع الحقوق محفوظة.</p>
+            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.7;">الرياض، المملكة العربية السعودية</p>
+            
+            <!-- زر المطورين غير المزعج -->
+            <div style="margin-top: 20px;">
+                <button onclick="openModal()" style="background: transparent; border: none; color: rgba(255,255,255,0.4); font-size: 0.8rem; cursor: pointer; text-decoration: underline;">
+                    فريق التطوير
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal المطورين -->
+    <div class="modal-overlay" id="devModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>فريق التطوير</h3>
+                <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                
+                <!-- مطور 1 -->
+                <div class="dev-card">
+                    <!-- صورة المطور الأول (صورة 25) -->
+                    <!-- صورة المطور الرئيسي -->
+                    <img src="imgs/25.jpg" alt="المطور الرئيسي" class="dev-avatar">
+                    <div class="dev-info">
+                        <h4>المطور الرئيسي</h4>
+                        <p>UI/UX Designer & Frontend Engineer</p>
+                        <div class="dev-actions">
+                            <a href="tel:+966532228615" class="d-btn" style="background: #3498db;"><i class="fa-solid fa-phone"></i></a>
+                            <a href="https://wa.me/966532228615" class="d-btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" class="d-btn btn-telegram"><i class="fa-brands fa-telegram"></i></a>
+                            <a href="#" class="d-btn btn-instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="d-btn btn-site"><i class="fa-solid fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مطور 2 -->
+                <div class="dev-card">
+                    <!-- صورة المطور الثاني (صورة 26) -->
+                    <!-- صورة الدعم الفني -->
+                    <img src="imgs/26.jpg" alt="الدعم الفني" class="dev-avatar">
+                    <div class="dev-info">
+                        <h4>الدعم الفني</h4>
+                        <p>Backend Developer & System Admin</p>
+                        <div class="dev-actions">
+                            <a href="tel:+966532228615" class="d-btn" style="background: #3498db;"><i class="fa-solid fa-phone"></i></a>
+                            <a href="https://wa.me/966532228615" class="d-btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" class="d-btn btn-telegram"><i class="fa-brands fa-telegram"></i></a>
+                            <a href="#" class="d-btn btn-instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="d-btn btn-site"><i class="fa-solid fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('devModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('devModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // إغلاق المودال عند النقر خارج الصندوق
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

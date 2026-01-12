@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>غرف سندوش بنل 2024 | القاسم</title>
+    
+    <!-- أيقونة الموقع -->
+    <link rel="shortcut icon" href="imgs/icon.jpg" type="image/x-icon">
+    
+    <!-- خطوط جوجل العربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #1a252f;
+            --secondary-color: #2c3e50;
+            --accent-color: #d35400;
+            --light-bg: #f8f9fa;
+            --text-color: #333;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .logo i { color: var(--accent-color); }
+
+        /* --- Main Content --- */
+        main {
+            padding: 60px 0;
+            min-height: 80vh;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 30px;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .contact-badge:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- Grid Layout --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* --- Product Card --- */
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .card-img {
+            height: 220px;
+            background: #e9ecef;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .card-img img {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card-desc {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+
+        /* --- Feature List Section --- */
+        .info-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .info-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .info-section h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            background: rgba(211, 84, 0, 0.1);
+            color: var(--accent-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(211, 84, 0, 0.3);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .btn-call-action {
+            background: #25D366;
+        }
+        .btn-call-action:hover {
+            background: #1ebe57;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* --- Modals (Popups) --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 3000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+
+        .modal-box {
+            background: var(--white);
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            transform: scale(0.8);
+            transition: var(--transition);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal-box { transform: scale(1); }
+
+        .modal-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-close {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: var(--white);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: 0.2s;
+        }
+        .modal-close:hover { background: rgba(255,255,255,0.4); }
+
+        .modal-body { padding: 30px; }
+        
+        .modal-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .modal-desc {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* --- Dev Team Modal Specifics --- */
+        .dev-card {
+            background: #f1f2f6;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .dev-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--white);
+        }
+
+        .dev-info h4 { margin-bottom: 5px; color: var(--primary-color); }
+        .dev-info p { font-size: 0.9rem; color: #666; }
+
+        .dev-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: flex-start;
+        }
+
+        .d-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .d-btn:hover { transform: scale(1.1); }
+        .btn-whatsapp { background: #25D366; }
+        .btn-telegram { background: #0088cc; }
+        .btn-instagram { background: #e1306c; }
+        .btn-site { background: #7289da; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 1.8rem; }
+            .grid-container { grid-template-columns: 1fr; }
+            .contact-badge { font-size: 1rem; padding: 8px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <!-- تغيير الاسم للقاسم -->
+            <div class="logo" onclick="window.location.href='index.html'">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>القاسم</span>
+            </div>
+            <a href="index.html" class="btn btn-primary" style="width: auto;">
+                <i class="fa-solid fa-home"></i> الرئيسية
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <div class="page-header">
+            <h1>غرف سندوش بنل 2024</h1>
+            <p>دليلك الشامل لغرف ومكاتب ساندوتش بانل الجاهزة بأفضل التصاميم والأسعار</p>
+            <!-- زر الاتصال المباشر -->
+            <a href="tel:+966532228615" class="contact-badge btn-call-action">
+                <i class="fa-solid fa-phone"></i> استشارة مجانية: +966 53 222 8615
+            </a>
+        </div>
+
+        <!-- Catalog Section -->
+        <div class="info-section">
+            <h2>كتالوج ساندوتش بانل للغرف والملاحق</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">
+                نوفر تشكيلة واسعة من الغرف الجاهزة والمتنقلة التي تناسب كافة الاستخدامات السكنية والتجارية والصناعية.
+            </p>
+            <div class="grid-container" id="catalog-grid">
+                <!-- سيتم توليد البطاقات هنا بواسطة JavaScript -->
+            </div>
+        </div>
+
+        <!-- Features & Services -->
+        <div class="info-section">
+            <h2>خدماتنا ومميزات المنتج 2024</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                    <div class="feature-text">
+                        <h3>عزل حراري ممتاز</h3>
+                        <p>ألواح بعزل حراري عالي يقلل استهلاك الطاقة ويحافظ على درجة حرارة مريحة.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="feature-text">
+                        <h3>سرعة التركيب</h3>
+                        <p>تصنيع وتركيب سريع جداً مقارنة بالبناء التقليدي، مما يوفر الوقت والمال.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
+                    <div class="feature-text">
+                        <h3>ألوان وتصاميم متنوعة</h3>
+                        <p>كتالوج ألوان واسع لتختار ما يناسب ذوقك والبيئة المحيطة بك.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div class="feature-text">
+                        <h3>نقل وتنفيذ</h3>
+                        <p>خدمة شاملة تبدأ من التصميم حتى التوصيل والتركيب في الموقع المحدد.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Info -->
+        <div class="info-section" style="background: #fff9f0; border: 1px solid #fce4d0;">
+            <h2><i class="fa-solid fa-tags"></i> سعر المتر ومقاول التركيب</h2>
+            <p style="margin-bottom: 20px;">
+                نقدم أفضل أسعار ساندوتش بانل مع التركيب في الرياض وجدة ومختلف مدن المملكة.
+            </p>
+            <ul style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #eee; list-style: disc; padding-right: 40px;">
+                <li style="margin-bottom: 10px;"><strong><i class="fa-solid fa-check-circle" style="color: var(--accent-color);"></i></strong> عرض سعر مفصل ومحدد مسبقاً بدون مفاجآت.</li>
+                <li style="margin-bottom: 10px;"><strong><i class="fa-solid fa-check-circle" style="color: var(--accent-color);"></i></strong> ضمان جودة المواد المستخدمة والتركيب.</li>
+                <li style="margin-bottom: 10px;"><strong><i class="fa-solid fa-check-circle" style="color: var(--accent-color);"></i></strong> دعم فني واستشارات هندسية مجانية.</li>
+                <li><strong><i class="fa-solid fa-check-circle" style="color: var(--accent-color);"></i></strong> أسعار تنافسية مقارنة بالسوق.</li>
+            </ul>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="tel:+966532228615" class="btn btn-primary btn-call-action" style="width: auto;">
+                    <i class="fa-solid fa-phone-volume"></i> اطلب السعر الآن
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- تغيير السنة إلى 2026 -->
+            <p>&copy; 2026 شركة القاسم لساندوتش بانل. جميع الحقوق محفوظة.</p>
+            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.7;">الرياض، المملكة العربية السعودية</p>
+            
+            <!-- زر المطورين غير المزعج -->
+            <div style="margin-top: 20px;">
+                <button onclick="openDevModal()" style="background: transparent; border: none; color: rgba(255,255,255,0.4); font-size: 0.8rem; cursor: pointer; text-decoration: underline;">
+                    فريق التطوير
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 1. Modal تفاصيل المنتج (يظهر عند الضغط على عرض التفاصيل) -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modalTitle">عنوان المنتج</h3>
+                <button class="modal-close" onclick="closeModal('productModal')"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="صورة المنتج" id="modalImage" class="modal-img">
+                <p id="modalDesc" class="modal-desc">وصف تفصيلي للمنتج...</p>
+                <div class="modal-actions">
+                    <a href="tel:+966532228615" class="btn btn-primary btn-call-action" style="width: auto;">
+                        <i class="fa-solid fa-phone"></i> اتصل الآن
+                    </a>
+                    <a href="https://wa.me/966532228615" target="_blank" class="btn btn-primary" style="width: auto; background: #25D366;">
+                        <i class="fa-brands fa-whatsapp"></i> واتساب
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Modal فريق التطوير -->
+    <div class="modal-overlay" id="devModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>فريق التطوير</h3>
+                <button class="modal-close" onclick="closeModal('devModal')"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                
+                <!-- مطور 1 -->
+                <div class="dev-card">
+                    <!-- صورة المطور الأول (صورة 38) -->
+                    <!-- صورة المطور الرئيسي -->
+                    <img src="imgs/38.jpg" alt="المطور الرئيسي" class="dev-avatar">
+                    <div class="dev-info">
+                        <h4>المطور الرئيسي</h4>
+                        <p>UI/UX Designer & Frontend Engineer</p>
+                        <div class="dev-actions">
+                            <a href="tel:+966532228615" class="d-btn" style="background: #3498db;"><i class="fa-solid fa-phone"></i></a>
+                            <a href="https://wa.me/966532228615" class="d-btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" class="d-btn btn-telegram"><i class="fa-brands fa-telegram"></i></a>
+                            <a href="#" class="d-btn btn-instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="d-btn btn-site"><i class="fa-solid fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مطور 2 -->
+                <div class="dev-card">
+                    <!-- صورة المطور الثاني (صورة 39) -->
+                    <!-- صورة الدعم الفني -->
+                    <img src="imgs/39.jpg" alt="الدعم الفني" class="dev-avatar">
+                    <div class="dev-info">
+                        <h4>الدعم الفني</h4>
+                        <p>Backend Developer & System Admin</p>
+                        <div class="dev-actions">
+                            <a href="tel:+966532228615" class="d-btn" style="background: #3498db;"><i class="fa-solid fa-phone"></i></a>
+                            <a href="https://wa.me/966532228615" class="d-btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" class="d-btn btn-telegram"><i class="fa-brands fa-telegram"></i></a>
+                            <a href="#" class="d-btn btn-instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="d-btn btn-site"><i class="fa-solid fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // بيانات المنتجات (للوصول إليها في النافذة المنبثقة)
+        const productsData = [
+            {
+                id: 1,
+                title: "غرف ساندوتش بانل",
+                shortDesc: "غرف جاهزة معزولة للإقامة الدائمة أو الموسمية، متوفرة بمساحات مختلفة.",
+                fullDesc: "نقدم غرف ساندوتش بانل بجودة عالية، مصممة لتوفر لك الراحة والعزل التام. تأتي هذه الغرف بأحجام ومقاسات متعددة تناسب الاستخدامات السكنية والإدارية. يتميز هذا النوع بسهولة التركيب في أي موقع وسرعة التجهيز.",
+                image: "imgs/34.jpg" // صورة غرف ساندوتش بانل
+            },
+            {
+                id: 2,
+                title: "مكاتب متنقلة",
+                shortDesc: "مكاتب عمل متنقلة ومريحة، جاهزة للتشغيل فور التركيب مع دورات مياه وكهرباء.",
+                fullDesc: "مكاتب متنقلة الحل الأمثل لمواقع العمل الميدانية. مجهزة بالكامل بنظام كهربائي وصحي، مما يجعلها جاهزة للاستخدام الفوري. تتميز بالمتانة وقوة العزل الحراري والصوتي لبيئة عمل مريحة.",
+                image: "imgs/35.jpg" // صورة مكاتب متنقلة
+            },
+            {
+                id: 3,
+                title: "غرف حراسة وكافيات",
+                shortDesc: "حلول متكاملة لغرف الحراسة وكافيات المطاعم بعزل حراري ممتاز ومظهر عصري.",
+                fullDesc: "تتضمن مجموعة من الغرف المصممة خصيصاً لغرف الحراسة والكافيات. مصنعة من مواد عازلة عالية الجودة لتحمل الظروف المناخية، مع إمكانية تخصيص التصميم واللون حسب طلب العميل.",
+                image: "imgs/36.jpg" // صورة غرف حراسة
+            },
+            {
+                id: 4,
+                title: "مستودعات وورش",
+                shortDesc: "مستودعات عازلة لحماية المواد والبضائع، وورش عمل سريعة التركيب وإزالة.",
+                fullDesc: "حلول تخزين صناعية وورش عمل متنقلة. نوفر مستودعات بأحجام كبيرة توفر حماية فائقة للمواد المخزنة من الحرارة والرطوبة. الورش مصممة لتكون مرنة وسريعة التفكيك عند الحاجة للنقل.",
+                image: "imgs/37.jpg" // صورة مستودعات
+            }
+        ];
+
+        // دالة لتوليد البطاقات في الصفحة
+        function renderProducts() {
+            const grid = document.getElementById('catalog-grid');
+            grid.innerHTML = productsData.map(item => `
+                <div class="product-card">
+                    <div class="card-img">
+                        <!-- صورة ${item.title} -->
+                        <img src="${item.image}" alt="${item.title}">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">${item.title}</h3>
+                        <p class="card-desc">${item.shortDesc}</p>
+                        <button class="btn btn-primary" onclick="openProductModal(${item.id})">
+                            <i class="fa-solid fa-eye"></i> عرض التفاصيل
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // دالة فتح نافذة تفاصيل المنتج
+        function openProductModal(id) {
+            const product = productsData.find(p => p.id === id);
+            if(product) {
+                document.getElementById('modalTitle').textContent = product.title;
+                document.getElementById('modalImage').src = product.image;
+                document.getElementById('modalDesc').textContent = product.fullDesc;
+                openModal('productModal');
+            }
+        }
+
+        // دوال المودال العامة
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openDevModal() {
+            openModal('devModal');
+        }
+
+        // إغلاق المودال عند النقر خارج الصندوق
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+        });
+    </script>
+</body>
+</html>
