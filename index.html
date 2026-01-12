@@ -152,13 +152,10 @@
             color: var(--accent-color);
         }
 
-                /* Mobile Toggle */
-        .mobile-toggle { display: none; }
-
-        @media (max-width: 768px) {
+                 @media (max-width: 768px) {
             .nav-links {
                 display: none; /* Hide for mobile initially */
-                flex-direction: column;
+                flex-direction: column; /* <-- 1. أضف هذا السطر لجعل القائمة عمودية */
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -166,6 +163,7 @@
                 background: var(--white);
                 padding: 20px;
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                align-items: flex-start; /* <-- 2. أضف هذا السطر لتوحيد المحاذاة */
             }
             .nav-links.mobile-active { display: flex; }
             
@@ -208,28 +206,7 @@
             }
 
             .mobile-toggle { display: block; font-size: 1.5rem; cursor: pointer; color: var(--primary-color); }
-        }}
-
-        /* --- Main Content Area (SPA Logic) --- */
-        main {
-            min-height: 80vh;
-            padding: 40px 0;
         }
-
-        .page-section {
-            display: none; /* Hide all pages initially */
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .page-section.active-section {
-            display: block; /* Show active page */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         /* --- Hero Section (Home) --- */
         .hero {
             text-align: center;
@@ -1121,3 +1098,4 @@
 </body>
 
 </html>
+
